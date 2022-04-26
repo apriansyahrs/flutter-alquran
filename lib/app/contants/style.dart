@@ -53,6 +53,9 @@ ThemeData themeLight = ThemeData(
       color: whiteColor,
     ),
   ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: primaryColorDark,
+  ),
 );
 
 ThemeData themeDark = ThemeData(
@@ -92,5 +95,8 @@ ThemeData themeDark = ThemeData(
       fontWeight: medium,
       color: whiteColor,
     ),
+  ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: whiteColor,
   ),
 );

@@ -160,7 +160,11 @@ class HomeView extends GetView<HomeController> {
                         if (snapshot.connectionState ==
                             ConnectionState.waiting) {
                           return Center(
-                            child: CircularProgressIndicator(),
+                            child: CircularProgressIndicator(
+                              color: Get.isDarkMode
+                                  ? whiteColor
+                                  : primaryColorLight,
+                            ),
                           );
                         }
                         if (!snapshot.hasData) {
@@ -255,6 +259,17 @@ class HomeView extends GetView<HomeController> {
               ),
             ],
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.isDarkMode
+              ? Get.changeTheme(themeLight)
+              : Get.changeTheme(themeDark);
+        },
+        child: Icon(
+          Get.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+          color: Get.isDarkMode ? primaryColorDark : whiteColor,
         ),
       ),
     );
