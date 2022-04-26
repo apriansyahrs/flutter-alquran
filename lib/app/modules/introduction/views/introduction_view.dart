@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:alquarnku/app/contants/style.dart';
 
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 import '../controllers/introduction_controller.dart';
@@ -18,7 +17,7 @@ class IntroductionView extends GetView<IntroductionController> {
           children: [
             Text(
               "Quran App",
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.headline5,
             ),
             SizedBox(
               height: 16,
@@ -28,7 +27,7 @@ class IntroductionView extends GetView<IntroductionController> {
               child: Text(
                 "Belajar Al-Quran dan Baca sekali setiap hari",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.subtitle2,
               ),
             ),
             SizedBox(
@@ -48,7 +47,7 @@ class IntroductionView extends GetView<IntroductionController> {
               onPressed: () => Get.offAllNamed(Routes.HOME),
               child: Text(
                 "Get Started",
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.button,
               ),
               style: ElevatedButton.styleFrom(
                 primary: creamColor,
