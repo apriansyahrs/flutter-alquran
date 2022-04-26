@@ -35,12 +35,20 @@ class HomeView extends GetView<HomeController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Assalamualaikum",
-                style: Theme.of(context).textTheme.subtitle2,
+              Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: 8,
+                ),
+                child: Text(
+                  "Assalamualaikum",
+                  style: Theme.of(context).textTheme.subtitle2,
+                ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 24),
+                margin: EdgeInsets.symmetric(
+                  vertical: 24,
+                  horizontal: 8,
+                ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   gradient: LinearGradient(
@@ -118,16 +126,18 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               TabBar(
-                indicatorColor: primaryColorLight,
-                labelColor: primaryColorLight,
-                unselectedLabelColor: secondaryColorLight,
-                labelStyle: TextStyle(
+                indicatorColor:
+                    Get.isDarkMode ? Color(0xffA44AFF) : primaryColorLight,
+                labelColor: Get.isDarkMode ? whiteColor : primaryColorLight,
+                unselectedLabelColor:
+                    Get.isDarkMode ? grayColor : secondaryColorLight,
+                labelStyle: GoogleFonts.poppins(
                   fontSize: 18,
                   fontWeight: semiBold,
                 ),
-                unselectedLabelStyle: TextStyle(
+                unselectedLabelStyle: GoogleFonts.poppins(
                   fontSize: 18,
-                  fontWeight: regular,
+                  fontWeight: medium,
                 ),
                 tabs: [
                   Tab(
@@ -176,36 +186,44 @@ class HomeView extends GetView<HomeController> {
                                   child: Center(
                                     child: Text(
                                       "${surah.number}",
-                                      style: TextStyle(
+                                      style: GoogleFonts.poppins(
                                         fontSize: 14,
                                         fontWeight: medium,
-                                        color: primaryColorDark,
+                                        color: Get.isDarkMode
+                                            ? whiteColor
+                                            : primaryColorDark,
                                       ),
                                     ),
                                   ),
                                 ),
                                 title: Text(
                                   "${surah.name?.transliteration?.id}",
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                     fontSize: 16,
                                     fontWeight: medium,
-                                    color: primaryColorDark,
+                                    color: Get.isDarkMode
+                                        ? whiteColor
+                                        : primaryColorDark,
                                   ),
                                 ),
                                 subtitle: Text(
                                   "${surah.numberOfVerses} Ayat | ${surah.revelation?.id ?? 'error..'}",
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                     fontSize: 12,
-                                    color: secondaryColorLight,
-                                    fontWeight: light,
+                                    color: Get.isDarkMode
+                                        ? grayColor
+                                        : secondaryColorLight,
+                                    fontWeight: regular,
                                   ),
                                 ),
                                 trailing: Text(
-                                  "${surah.name?.long}",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: medium,
-                                    color: primaryColorLight,
+                                  "${surah.name?.short}",
+                                  style: GoogleFonts.amiri(
+                                    fontSize: 20,
+                                    fontWeight: bold,
+                                    color: Get.isDarkMode
+                                        ? Color(0xffA44AFF)
+                                        : primaryColorLight,
                                   ),
                                 ),
                               );
@@ -215,7 +233,7 @@ class HomeView extends GetView<HomeController> {
                     Center(
                       child: Text(
                         "Page2",
-                        style: TextStyle(
+                        style: GoogleFonts.poppins(
                           fontSize: 16,
                           fontWeight: medium,
                           color: primaryColorLight,
@@ -225,7 +243,7 @@ class HomeView extends GetView<HomeController> {
                     Center(
                       child: Text(
                         "Page3",
-                        style: TextStyle(
+                        style: GoogleFonts.poppins(
                           fontSize: 16,
                           fontWeight: medium,
                           color: primaryColorLight,

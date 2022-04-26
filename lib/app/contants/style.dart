@@ -15,7 +15,8 @@ FontWeight medium = FontWeight.w500;
 FontWeight semiBold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
 
-ThemeData appLight = ThemeData(
+ThemeData themeLight = ThemeData(
+  brightness: Brightness.light,
   primaryColor: primaryColorLight,
   scaffoldBackgroundColor: whiteColor,
   appBarTheme: AppBarTheme(
@@ -54,7 +55,8 @@ ThemeData appLight = ThemeData(
   ),
 );
 
-ThemeData appDark = ThemeData(
+ThemeData themeDark = ThemeData(
+  brightness: Brightness.dark,
   primaryColor: whiteColor,
   scaffoldBackgroundColor: primaryColorDark,
   appBarTheme: AppBarTheme(

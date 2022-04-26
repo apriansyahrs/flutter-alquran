@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.apriansyahrs.alquarnku">
    <application
-        android:label="alquarnku"
+        android:label="Quran App"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
